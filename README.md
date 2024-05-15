@@ -29,7 +29,7 @@ Dưới đây là kế hoạch chi tiết cho dự án của tôi về việc th
 - Mục tiêu: Hiển thị biểu đồ xu hướng giá đất theo thời gian.
 - Hành động:
   - Tích hợp Chart.js hoặc D3.js vào giao diện web để tạo biểu đồ.
- Tổng kết
+ 6. Tổng kết
 - Node-RED: Tự động hóa quá trình thu thập dữ liệu.
 - SQL Database: Lưu trữ và quản lý dữ liệu.
 - FastAPI: Cung cấp API truy xuất dữ liệu.
