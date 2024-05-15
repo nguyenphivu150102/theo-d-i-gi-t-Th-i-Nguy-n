@@ -30,3 +30,27 @@ Hiển thị dữ liệu từ cơ sở dữ liệu:
 - Web Application: Deploy web app trên một hosting hoặc cùng server với FastAPI.
 6. Tổng kết
 Hệ thống này sẽ tự động lấy dữ liệu giá đất từ các nguồn đáng tin cậy, lưu trữ vào cơ sở dữ liệu và hiển thị trên một trang web động. Các công nghệ chính bao gồm Python, FastAPI, Node-RED, HTML/CSS/JavaScript, và một cơ sở dữ liệu quan hệ (như MySQL hoặc PostgreSQL).
+Sơ đồ tổng quát hệ thống
+![Screenshot (405)](https://github.com/nguyenphivu150102/theo-d-i-gi-t-Th-i-Nguy-n/assets/132656248/f24b21f7-c34f-417a-9544-e0e83f24258e)
+Mô tả chi tiết các thành phần:
+1. Data Sources (Websites, APIs):
+- Nguồn dữ liệu là các trang web chuyên về bất động sản hoặc API thương mại cung cấp thông tin về giá đất ở Thái Nguyên.
+2. Web Scraping:
+- Sử dụng Python với thư viện requests và beautifulsoup4 để lấy dữ liệu từ các nguồn trực tuyến.
+- Dữ liệu sau khi được thu thập sẽ được xử lý để có định dạng phù hợp.
+3. FastAPI:
+- Tạo API bằng Python và FastAPI để truy xuất dữ liệu từ cơ sở dữ liệu.
+- FastAPI kết nối với cơ sở dữ liệu (MySQL, PostgreSQL, hoặc SQLite) thông qua SQLAlchemy.
+- Cung cấp endpoint để truy xuất thông tin về giá đất.
+4. Node-RED:
+- Sử dụng Node-RED để tự động hóa việc thu thập và xử lý dữ liệu từ các nguồn dữ liệu.
+- Các node chính:
+ - HTTP Request Node: Để gọi API từ các trang web hoặc dịch vụ bất động sản.
+ - Function Node: Để xử lý và định dạng dữ liệu.
+ - MySQL Node: Để ghi dữ liệu vào cơ sở dữ liệu.
+5. Database (MySQL, PostgreSQL, SQLite):
+- Lưu trữ thông tin về giá đất, bao gồm tên dự án, địa chỉ, giá trị và ngày cập nhật.
+- Cơ sở dữ liệu này sẽ được truy cập bởi FastAPI và Node-RED.
+6. Web Client:
+- Trang web được xây dựng bằng HTML, CSS, và JavaScript để hiển thị thông tin giá đất.
+- Sử dụng Fetch API để lấy dữ liệu từ FastAPI và hiển thị lên giao diện người dùng.
