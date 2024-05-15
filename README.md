@@ -1,37 +1,32 @@
-Dưới đây là kế hoạch chi tiết cho dự án của tôi về việc theo dõi giá đất ở Thái Nguyên. Chúng ta sẽ đi qua từng bước cụ thể:
- 1. Thu thập Dữ liệu
- Công cụ: Node-RED
-- Mục tiêu: Kết nối và thu thập dữ liệu giá đất từ một nguồn đáng tin cậy.
-- Hành động:
-  - Tìm một API hoặc nguồn cung cấp dữ liệu giá đất ở Thái Nguyên (ví dụ: trang web bất động sản, dịch vụ cung cấp dữ liệu bất động sản).
-  - Sử dụng Node-RED để thiết lập luồng công việc nhằm tự động lấy dữ liệu giá đất định kỳ (ví dụ: mỗi giờ).
-  - Cấu hình Node-RED để lưu trữ dữ liệu đã thu thập vào cơ sở dữ liệu SQL.
- 2. Lưu trữ Dữ liệu
- Công cụ: MySQL hoặc PostgreSQL
-- Mục tiêu: Lưu trữ dữ liệu giá đất một cách có cấu trúc và dễ truy xuất.
-- Hành động:
-  - Tạo một cơ sở dữ liệu và một bảng để lưu trữ thông tin về giá đất.
-  - Bảng này có thể bao gồm các cột như: `timestamp`, `location`, `land_price`, `area_size`, `property_type`, `other_attributes`.
- 3. Tạo API
- Công cụ: FastAPI
-- Mục tiêu: Cung cấp các điểm cuối API để truy xuất dữ liệu giá đất từ cơ sở dữ liệu SQL.
-- Hành động:
-  - Cài đặt và cấu hình FastAPI.
-  - Tạo các điểm cuối API để trả về dữ liệu theo yêu cầu của người dùng, chẳng hạn như giá đất theo thời gian, theo khu vực, loại bất động sản, v.v.
-   4. Web Giao diện
- Công cụ: HTML, CSS, JavaScript (AJAX hoặc Fetch API)
-- Mục tiêu: Xây dựng giao diện web để hiển thị thông tin giá đất.
-- Hành động:
-  - Thiết kế giao diện người dùng đơn giản và trực quan với HTML và CSS.
-  - Sử dụng JavaScript để gọi các endpoint API và hiển thị dữ liệu trên trang web.
- 5. Biểu đồ
- Công cụ: Chart.js hoặc D3.js
-- Mục tiêu: Hiển thị biểu đồ xu hướng giá đất theo thời gian.
-- Hành động:
-  - Tích hợp Chart.js hoặc D3.js vào giao diện web để tạo biểu đồ.
- 6. Tổng kết
-- Node-RED: Tự động hóa quá trình thu thập dữ liệu.
-- SQL Database: Lưu trữ và quản lý dữ liệu.
-- FastAPI: Cung cấp API truy xuất dữ liệu.
-- Web Interface: Hiển thị và tương tác với dữ liệu.
-- Chart.js/D3.js: Phân tích và biểu diễn dữ liệu dưới dạng biểu đồ.
+Xây dựng Website theo dõi giá đất ở Thái Nguyên
+Dưới đây là chi tiết về cách xây dựng một hệ thống để theo dõi giá đất ở Thái Nguyên, từ việc thu thập dữ liệu, xử lý và hiển thị dữ liệu lên trang web.
+1. Cơ sở dữ liệu
+Bảng Property:
+- ID: Khoá chính (PK)
+- Tên dự án: Tên của dự án hoặc khu đất
+- Địa chỉ: Địa chỉ cụ thể
+- Giá trị: Giá trị đất (VNĐ/m²)
+- Ngày cập nhật: Ngày cập nhật giá
+2. Mô-đun đọc dữ liệu
+Sử dụng Python và FastAPI để tạo API:
+- Python Script: Sử dụng `requests` hoặc `beautifulsoup4` để lấy dữ liệu từ các trang web chuyên về bất động sản.
+3. Node-RED
+Tự động hóa việc lấy dữ liệu và ghi vào cơ sở dữ liệu:
+- HTTP Request Node: Để lấy dữ liệu từ trang web bất động sản.
+- Function Node: Để xử lý dữ liệu.
+- Database Node: Để ghi dữ liệu vào cơ sở dữ liệu.
+Mẫu flow trong Node-RED:
+3.1. Inject Node: Để thiết lập lịch tự động chạy.
+3.2. HTTP Request Node: Để lấy dữ liệu từ trang web bất động sản.
+3.3. Function Node: Để xử lý dữ liệu và chuyển đổi thành định dạng phù hợp.
+3.4. MySQL Node: Để ghi dữ liệu vào cơ sở dữ liệu.
+4. Web Application
+Hiển thị dữ liệu từ cơ sở dữ liệu:
+- HTML/CSS/JavaScript: Để tạo giao diện người dùng.
+- Fetch API: Để lấy dữ liệu từ FastAPI và hiển thị lên trang web.
+5. Triển khai
+- Server: Deploy FastAPI trên một server (có thể dùng dịch vụ như AWS, Heroku, hoặc DigitalOcean).
+- Node-RED: Deploy Node-RED trên một server riêng hoặc trên cùng server với FastAPI.
+- Web Application: Deploy web app trên một hosting hoặc cùng server với FastAPI.
+6. Tổng kết
+Hệ thống này sẽ tự động lấy dữ liệu giá đất từ các nguồn đáng tin cậy, lưu trữ vào cơ sở dữ liệu và hiển thị trên một trang web động. Các công nghệ chính bao gồm Python, FastAPI, Node-RED, HTML/CSS/JavaScript, và một cơ sở dữ liệu quan hệ (như MySQL hoặc PostgreSQL).
