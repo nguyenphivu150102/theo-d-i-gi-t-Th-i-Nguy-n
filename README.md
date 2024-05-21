@@ -27,7 +27,8 @@ Hiển thị dữ liệu từ cơ sở dữ liệu:
 6. Tổng kết
 Hệ thống này sẽ tự động lấy dữ liệu giá đất từ các nguồn đáng tin cậy, lưu trữ vào cơ sở dữ liệu và hiển thị trên một trang web động. Các công nghệ chính bao gồm Python, FastAPI, Node-RED, HTML/CSS/JavaScript, và một cơ sở dữ liệu quan hệ (như MySQL hoặc PostgreSQL).
 7. Sơ đồ tổng quát hệ thống
-![34e1bdddeb8e4bd0129f](https://github.com/nguyenphivu150102/theo-d-i-gi-t-Th-i-Nguy-n/assets/132656248/6e674589-46d1-45d4-bb76-aac621c2fd1a)
+![Screenshot (418)](https://github.com/nguyenphivu150102/theo-d-i-gi-t-Th-i-Nguy-n/assets/132656248/82363549-cae0-4148-b140-f99cb76959b1)
+
 
 8. Dưới đây là mô tả chi tiết về từng thành phần của sơ đồ:
 
