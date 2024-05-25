@@ -1,3 +1,7 @@
+THÔNG TIN CÁ NHÂN:
+Họ và tên: Nguyễn Phi Vũ 
+MSSV: K205480106032
+Lớp: K56KMT01
 Xây dựng Website theo dõi giá đất ở Thái Nguyên
 Dưới đây là chi tiết về cách xây dựng một hệ thống để theo dõi giá đất ở Thái Nguyên, từ việc thu thập dữ liệu, xử lý và hiển thị dữ liệu lên trang web.
 1. Cơ sở dữ liệu
