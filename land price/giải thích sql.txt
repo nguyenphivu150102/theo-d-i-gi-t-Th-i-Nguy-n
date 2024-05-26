@@ -1,0 +1,33 @@
+Dưới đây là giải thích về các cột trong bảng LandPrices:
+
+1. **timestamp**: Đây là thời điểm ghi nhận dữ liệu về giá đất, được lưu dưới dạng số nguyên lớn (BIGINT). Thường là số giây tính từ một điểm thời gian cố định, chẳng hạn từ Epoch (thời điểm 00:00:00 UTC ngày 1/1/1970).
+
+2. **location**: Đây là địa điểm của bất động sản mà giá đất được ghi nhận, được lưu dưới dạng chuỗi ký tự (VARCHAR(50)).
+
+3. **currency**: Đơn vị tiền tệ được sử dụng trong dữ liệu về giá đất, được lưu dưới dạng chuỗi ký tự (VARCHAR(10)).
+
+4. **unit_prev_close_price**: Đây là giá đóng cửa của đơn vị diện tích trước đó, được lưu dưới dạng số thực (FLOAT). 
+
+5. **open_price**: Giá mở cửa của đơn vị diện tích, lưu dưới dạng số thực (FLOAT).
+
+6. **low_price**: Giá thấp nhất của đơn vị diện tích, lưu dưới dạng số thực (FLOAT).
+
+7. **high_price**: Giá cao nhất của đơn vị diện tích, lưu dưới dạng số thực (FLOAT).
+
+8. **open_time**: Thời điểm mở cửa, được lưu dưới dạng số nguyên lớn (BIGINT), thường là số giây tính từ một điểm thời gian cố định.
+
+9. **price**: Giá đất, lưu dưới dạng số thực (FLOAT).
+
+10. **ch**: Biến đổi giá, lưu dưới dạng số thực (FLOAT).
+
+11. **chp**: Tỷ lệ biến đổi giá, lưu dưới dạng số thực (FLOAT).
+
+12. **ask**: Giá đặt mua, lưu dưới dạng số thực (FLOAT).
+
+13. **bid**: Giá đặt bán, lưu dưới dạng số thực (FLOAT).
+
+14. **price_square_meter**: Giá đất trên mỗi mét vuông, lưu dưới dạng số thực (FLOAT).
+
+15. **price_acre**: Giá đất trên mỗi mẫu (mẫu Anh), lưu dưới dạng số thực (FLOAT).
+
+Các cột này cung cấp thông tin chi tiết về giá đất tại một địa điểm và một thời điểm nhất định.
