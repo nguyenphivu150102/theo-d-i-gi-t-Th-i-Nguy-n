@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .message {
+            margin: 10px 0;
+        }
+        .message .sender {
+            font-weight: bold;
+        }
+        .message .timestamp {
+            color: #999;
+            font-size: 12px;
+        }
+        .input-area {
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            width: calc(100% - 100px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+        button {
+            width: 100px;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chat Interface</h1>
+        <div id="chat-messages"></div>
+        <div class="input-area">
+            <input type="text" id="message-input" placeholder="Type your message...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const chatMessages = document.getElementById('chat-messages');
+        const messageInput = document.getElementById('message-input');
+        const sendButton = document.getElementById('send-button');
+
+        function addMessage(sender, message) {
+            const div = document.createElement('div');
+            div.classList.add('message');
+            div.innerHTML = `<span class="sender">${sender}: </span>${message}`;
+            chatMessages.appendChild(div);
+        }
+
+        // Dummy messages for demonstration
+        addMessage('User', 'Hello!');
+        addMessage('Chatbot', 'Hi there! How can I help you?');
+
+        // Event listener for sending messages
+        sendButton.addEventListener('click', () => {
+            const message = messageInput.value;
+            if (message.trim() !== '') {
+                addMessage('User', message);
+                // Send message to server (you can implement this part using AJAX or WebSockets)
+                // Dummy response from server
+                setTimeout(() => {
+                    addMessage('Chatbot', 'Sorry, I am just a dummy chatbot. I cannot respond to your messages.');
+                }, 1000);
+                messageInput.value = '';
+            }
+        });
+
+        // Event listener for pressing Enter key to send message
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendButton.click();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+[
+    {
+        "id": "379f72ab0af67273",
+        "type": "http request",
+        "z": "8c5f4e9c2be30d39",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://127.0.0.1:8800/zillow_data",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 590,
+        "y": 680,
+        "wires": [
+            [
+                "ce972055e6c547c0",
+                "9f33011155ead1bb"
+            ]
+        ]
+    }
+]

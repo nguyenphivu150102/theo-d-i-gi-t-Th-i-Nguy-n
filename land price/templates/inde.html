@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý giá đất</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Custom CSS */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        #data-table {
+            width: 100%;
+        }
+        #data-table th, #data-table td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="mb-4">Danh sách giá đất</h2>
+        <table class="table table-striped" id="data-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên dự án</th>
+                    <th>Địa chỉ</th>
+                    <th>Giá trị (VNĐ/m²)</th>
+                    <th>Ngày cập nhật</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- Table rows will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        // Function to fetch data from API and populate the table
+        function fetchData() {
+            // Replace '/api/data' with your actual API endpoint
+            fetch('/api/data')
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = document.getElementById('table-body');
+                    tableBody.innerHTML = '';
+
+                    data.forEach(row => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td>${row.id}</td>
+                            <td>${row.tenDuAn}</td>
+                            <td>${row.diaChi}</td>
+                            <td>${row.giaTri}</td>
+                            <td>${row.ngayCapNhat}</td>
+                        `;
+                        tableBody.appendChild(tr);
+                    });
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
+
+        // Call fetchData when the page loads
+        window.onload = fetchData;
+
+        // Call fetchData every 60 seconds (optional)
+        // setInterval(fetchData, 60000);
+    </script>
+</body>
+</html>
